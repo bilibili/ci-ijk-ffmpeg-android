@@ -1,0 +1,41 @@
+language: android
+android:
+  components:
+  - platform-tools
+  - tools
+  - build-tools-23.0.3
+  - android-23
+  - extra-android-support
+  - extra-android-m2repository
+env:
+  global:
+  - IJK_HASH=r0.5.1-gradle-jar
+  - IJK_REPO=https://github.com/Bilibili/ijkplayer.git
+  - secure: X6mTpdWMSAEFPX2xFIyes0/dMApz8ydp5eRVJZzlMxJlugZcHOO/5upoOpBpLJlFhLbVuG7w3hPoIhVR0x6KWN+h2oWNofIkCbWXYVVeDZDkPmied5w8uhoOC545W9lY81o13i2gqKHVdE2T3g9UhLk9htRJ49/bWvj54vWn+6AJmvVkfyjAiFRjwTdM3SeSWPFna3mX0Rmal64r3ZEIh1hFdhFx5Dc8egXsf9DxUFgqZDaNpFTO4oExNUufu24twl76q/ivvuwVUcnF1EBYlShgxFe2DAAa21zFsNvyTy3/Yl97VRdSAL4HSYyGNZ+7xevqL4GlpDtnxwJVzi4SG4ZeD/vbo9qmZvA0kdRNWPM5p+UPzuhxWzXncrHk4Ofn4npQF4NirxBIfvhgQlDrpq6UX6uUa3r+HJgBikG+QS8bHUjdy5Esnk71zvtc2DEnmafxfTVrst9ySkqtEJF9k4sawD8DDo4r+ga/nK+fGlqbyloghvNRk3COxWaoDFMmecBeK6N3DyjJq4nVXecjSFvLPL0lChUXr/sWHoCa7yYTud1lXQATI+NUbkmOUedKOknlvH3cKlq0dvMjfTSAmgC3cJBV4BusHxUMuaPgoEYzSsNfEx2YH65obtMvffkxN0KqPSVMZz2UUfNmPB8pO40GLHf3l/+s6BbZ2xeIH+s=
+  - secure: kS4MsOedFN0HP4eakPA056Wgm71U6wQoviC/z1V507MH1KMR4/PNqh2ruowAh1QcVDqcoHKGI+0D2AvTG3IizRYaz+p94L+CEuE78nx9xnAcQ1jmcKHOeKqDJZph4+yux/MWfijLWgoolNS7O5Up0M4/j9mv2JbTrjZ3r1U/N4y/SFBeGkCWSotYBWtPeZk85xJUQlVnuwMN0UwOGgqImCGK0sq9rYNtfmACH1aiaujLSfMY89jtcusE7Tb/QC5SXprvP6a6Q74oqbMh8uqv7kYoOsOp+JKi2dxiatZz3F1cXsp5XaZCdU81O1RynI9cfKBYXV8vmvdCO92W2Lwx0zGUg4MjSZwupmCQF4WwmgB10TDn6VZewFHz4sC28LQCeFv6u/pdiy7dHJ4M/AxbSgoCzRIkI/LRkFMId8p1uJ3f1p4wCMWTt6uxC5BCjKmxpXg6OkLkOb4TLMeGmcq58VlglSQlIHA9GOxA8YZBh3V/oEl/YMwJMKvHPSaRmxS229HKtiwSh9Brk8YuoORHaSloSw81ah1qDsequOBfQ4mK7dLO03K0oRerTcxwiLQIw8hUdNUmb8TZOwY0uzTxqrzl1jNL0PYyLX31S4BJfTxx4niI3a05r9/HLj+6mYtl6Yz4lkltYqJGGPA+KQ63zNBNFKi5ovfBEjWHx3AnHBI=
+  - secure: kjGoCZqWRbknVbym39gEeysyIBcJk0/pgaOFUIn5IzPCJS7pa196WqkfnmCQtYyBSciKV26nL3oyfwAWzAhP3McxNAAfUT3WdgqTinCvsUbX8H/I1y3CEpN25VdheT/ReVSOjLmEoX4ssSbh2aykmBmEdKBLPmmQxj0wOXXSeDswf9UeRYbQsDQCtE+b+osLqk2xfunI25F1e7KS6oSdnwl3uvkKPVgQYFXWu4fHAjuU7KF7DiB8q4ycgkO/RMvc/b1KY+WucNL0Fax7qdvLPn9A8BDATC4/BvHh0Y23AfqRENl1+ePI9w/qq8MRLzz/HSNfviAo0XaErEg+yY1d00A9jeCAg6Gz8fVQt6TsO3k6aJyT2JLhjugNxvlieOHa53jt3iRMnkE3OkhZIyEC7aEq1QaZeHCWzCT8Th+u59WmYEb7SfbQFpIfm5rh2jQeUEm5gBHoLMJ6o1d0nJxZnzjqIxEjV32I+mIxa6Zu16uYqcFuK3SGySBTPutTK3hx/6hOWfiMwOQ5VEbPreG6xM4LH3wzbCqvgH1qiXVJVdl8zxUlTpLmW9l4xqimGprP7KEPcgt5KkGtCBREpLrs1zdvM1WFniRvt+zS4JJQU8yhxizWwiPu5JIhjZ7cLllFCmjd4KBw6drvsSmzGUT9csqS5cPqQuHQT0eGUDPWB7c=
+before_install:
+- sudo apt-get install -y git
+- sudo apt-get install -y yasm
+before_script:
+- wget "https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip"
+- mkdir -p $HOME/android-ndk-root
+- unzip android-ndk-r10e-linux-x86_64.zip -d $HOME/android-ndk-root > /dev/null
+- export ANDROID_NDK=$HOME/android-ndk-root/android-ndk-r10e
+- git clone --depth=50 --branch=$IJK_HASH $IJK_REPO
+- cd ijkplayer
+- "./init-android.sh"
+- cd android/contrib
+- "./compile-ffmpeg.sh all"
+- cd ..
+- "./compile-ijk.sh all"
+- cd ijkplayer
+- "./gradlew build"
+- "./gradlew :ijkplayer-armv5:bintrayUpload"
+- "./gradlew :ijkplayer-armv7a:bintrayUpload"
+- "./gradlew :ijkplayer-arm64:bintrayUpload"
+- "./gradlew :ijkplayer-x86:bintrayUpload"
+- "./gradlew :ijkplayer-x86_64:bintrayUpload"
+- "./gradlew :ijkplayer-java:bintrayUpload"
+script:
+- echo "FINISHED"
