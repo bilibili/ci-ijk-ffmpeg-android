@@ -17,6 +17,7 @@ env:
 before_install:
 - sudo apt-get install -y git
 - sudo apt-get install -y yasm
+- jdk_switcher use oraclejdk8
 before_script:
 - wget "https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip"
 - mkdir -p $HOME/android-ndk-root
