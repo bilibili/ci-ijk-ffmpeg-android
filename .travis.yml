@@ -19,24 +19,14 @@ before_install:
 - sudo apt-get install -y yasm
 - jdk_switcher use oraclejdk8
 before_script:
-- wget "https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip"
+#- wget "https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip"
 - mkdir -p $HOME/android-ndk-root
-- unzip android-ndk-r10e-linux-x86_64.zip -d $HOME/android-ndk-root > /dev/null
+#- unzip android-ndk-r10e-linux-x86_64.zip -d $HOME/android-ndk-root > /dev/null
 - export ANDROID_NDK=$HOME/android-ndk-root/android-ndk-r10e
 - git clone --depth=50 --branch=$IJK_HASH $IJK_REPO
 - cd ijkplayer
-- "./init-android.sh"
-- cd android/contrib
-- "./compile-ffmpeg.sh all"
-- cd ..
-- "./compile-ijk.sh all"
-- cd ijkplayer
-- "./gradlew build"
-- "./gradlew :ijkplayer-armv5:bintrayUpload"
-- "./gradlew :ijkplayer-armv7a:bintrayUpload"
-- "./gradlew :ijkplayer-arm64:bintrayUpload"
-- "./gradlew :ijkplayer-x86:bintrayUpload"
-- "./gradlew :ijkplayer-x86_64:bintrayUpload"
-- "./gradlew :ijkplayer-java:bintrayUpload"
+#- "./init-android.sh"
+- cd android
+- "./build-on-travis.sh all"
 script:
 - echo "FINISHED"
