@@ -27,20 +27,16 @@ before_script:
 - cd ijkplayer
 - "./init-android.sh"
 - cd android/contrib
-# - "./compile-ffmpeg.sh all"
-- "./compile-ffmpeg.sh x86"
-- "./compile-ffmpeg.sh x86_64"
+- "./compile-ffmpeg.sh all"
 - cd ..
-# - "./compile-ijk.sh all"
-- "./compile-ijk.sh x86"
-- "./compile-ijk.sh x86_64"
+- "./compile-ijk.sh all"
 - cd ijkplayer
 - "./gradlew build"
-# - "./gradlew :ijkplayer-armv5:bintrayUpload"
-# - "./gradlew :ijkplayer-armv7a:bintrayUpload"
-# - "./gradlew :ijkplayer-arm64:bintrayUpload"
-- "./gradlew :ijkplayer-x86:bintrayUpload"
-- "./gradlew :ijkplayer-x86_64:bintrayUpload"
-- "./gradlew :ijkplayer-java:bintrayUpload"
+- "./gradlew :ijkplayer-armv5:bintrayUpload --stacktrace --info --debug"
+- "./gradlew :ijkplayer-armv7a:bintrayUpload --stacktrace --info --debug"
+- "./gradlew :ijkplayer-arm64:bintrayUpload --stacktrace --info --debug"
+- "./gradlew :ijkplayer-x86:bintrayUpload --stacktrace --info --debug"
+- "./gradlew :ijkplayer-x86_64:bintrayUpload --stacktrace --info --debug"
+- "./gradlew :ijkplayer-java:bintrayUpload --stacktrace --info --debug"
 script:
 - echo "FINISHED"
