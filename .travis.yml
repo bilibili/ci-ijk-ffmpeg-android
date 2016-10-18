@@ -27,6 +27,6 @@ before_script:
 - cd ijkplayer
 - "./init-android.sh"
 - cd android
-- "./build-on-travis.sh all"
+- "./build-on-travis.sh exo"
 script:
 - echo "FINISHED"
